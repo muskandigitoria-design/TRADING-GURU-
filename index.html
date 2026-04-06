@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Landing page</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+a {
+  text-decoration:none !important;
+  cursor: pointer;
+}
+
+body{
+  background:black;
+  color:white;
+  text-align:center;
+  height:100vh;
+  overflow:hidden;
+  position:relative;
+}
+
+/* FULL SCREEN LINK */
+.full-screen-link {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  display: block;
+  cursor: pointer;
+}
+
+/* BACKGROUND */
+.background{
+  position:fixed;
+  inset:0;
+  background:url('/image/Фон города для Фотошопа - скачать фото бесплатно.jpeg') center/cover no-repeat;
+  filter:blur(1px);
+  z-index:-2;
+}
+
+.overlay{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.6);
+  z-index:-1;
+}
+
+/* BUBBLES */
+.bubbles span{
+  position:absolute;
+  bottom:-50px;
+  width:20px;height:20px;
+  background:rgba(255,255,255,.2);
+  border-radius:50%;
+  animation:rise 10s linear infinite;
+}
+.bubbles span:nth-child(2){width:30px;height:30px;left:20%;animation-duration:7s;}
+.bubbles span:nth-child(3){width:40px;height:40px;left:40%;animation-duration:9s;}
+.bubbles span:nth-child(4){width:50px;height:50px;left:60%;animation-duration:6s;}
+.bubbles span:nth-child(5){width:60px;height:60px;left:80%;animation-duration:8s;}
+
+@keyframes rise{
+  0%{bottom:-50px;opacity:0}
+  50%{opacity:1}
+  100%{bottom:100%;opacity:0}
+}
+
+/* CONTENT */
+.container{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+  padding:15px;
+  position:relative;
+  z-index:2;
+  pointer-events:none;
+}
+
+.blur-box{
+  background:rgba(255,255,255,.15);
+  backdrop-filter:blur(12px);
+  border-radius:15px;
+  padding:25px;
+  width:90%;
+  max-width:400px;
+  box-shadow:0 0 20px rgba(0,230,255,.6);
+}
+
+h1{
+  color:#00e6ff;
+  font-size:24px;
+  margin-bottom:10px;
+  text-transform:uppercase;
+}
+
+.timer{
+  font-size:22px;
+  font-weight:700;
+  margin:10px 0;
+}
+
+.profile img{
+  width:150px;
+  height:150px;
+  border-radius:50%;
+  border:3px solid #00e6ff;
+  box-shadow:0 0 15px #00e6ff;
+  margin:10px 0;
+  object-fit:cover;
+}
+
+/* BUTTON */
+@keyframes shine{
+  from{background-position:-200%}
+  to{background-position:200%}
+}
+@keyframes zoom{
+  0%{transform:scale(1)}
+  50%{transform:scale(1.15)}
+  100%{transform:scale(1)}
+}
+
+.view-btn{
+  display:inline-block;
+  height:45px;
+  line-height:45px;
+  padding:0 26px;
+  border-radius:35px;
+  font-size:16px;
+  font-weight:600;
+  background:linear-gradient(45deg,#32B0ED,#3a7bd5);
+  background-size:400% 400%;
+  animation:shine 8s linear infinite,zoom 3s ease-in-out infinite;
+  color:#fff !important;
+  margin-top:10px;
+}
+
+.footer-text{
+  font-size:13px;
+  margin-top:14px;
+  opacity:.85;
+}
+
+.credit{
+  position:absolute;
+  bottom:20px;
+  width:100%;
+  text-align:center;
+  font-size:12px;
+  color:#ffffff;
+  z-index:1000;
+  pointer-events:none;
+}
+.credit a{
+  color:#00ffcc !important;
+  font-weight:600;
+  text-decoration: underline !important;
+  pointer-events:all;
+  position:relative;
+  z-index:1001;
+}
+</style>
+
+
+</head>
+
+<body>
+
+<!-- FULL SCREEN CLICKABLE LINK -->
+<a href="https://t.me/+4MyyS39n80oxZjk1" target="_blank" class="full-screen-link"></a>
+
+<div class="background"></div>
+<div class="overlay"></div>
+
+<div class="bubbles">
+  <span></span><span></span><span></span><span></span><span></span>
+</div>
+
+<div class="container">
+  <div class="blur-box">
+    <h1>TRADING GURU SEBI REGISTERED</h1>
+    <p>💰 100% Free Options Trade with Up to 95% Accuracy! 🎯</p>
+
+    <div class="timer">
+      <span id="countdown">3</span> SECONDS
+    </div>
+
+    <div class="profile">
+      <img src="https://fantasticczone.site/wp-content/uploads/2026/04/cityyy.jpg" alt="Trader">
+    </div>
+
+    <h2>40,000 Subscribers</h2>
+    <p>✅ BankNifty, Nifty, Stock Options Covered 💹</p>
+
+    <a href="https://t.me/+4MyyS39n80oxZjk1" class="view-btn" style="pointer-events:all;position:relative;z-index:1000;">
+      JOIN NOW FOR FREE
+    </a>
+
+    <p class="footer-text">
+      💎 Trusted by thousands of traders worldwide 🌍
+    </p>
+  </div>
+</div>
+
+<div class="credit">
+  Ads managed by 
+  <a href="https://t.me/+TRlJl628l-FkMWE9" target="_blank">
+    @Nexgroww_agency
+  </a>
+</div>
+
+<script>
+let countdown = 3;
+let timer = setInterval(() => {
+  document.getElementById("countdown").innerText = countdown;
+  if (countdown <= 0) {
+    clearInterval(timer);
+    window.location.href = "https://t.me/+4MyyS39n80oxZjk1";
+  }
+  countdown--;
+}, 1000);
+</script>
+
+
+
+</body>
+</html>
