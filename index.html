@@ -29,15 +29,6 @@ body{
   position:relative;
 }
 
-/* FULL SCREEN LINK */
-.full-screen-link {
-  position: fixed;
-  inset: 0;
-  z-index: 999;
-  display: block;
-  cursor: pointer;
-}
-
 /* BACKGROUND */
 .background{
   position:fixed;
@@ -83,7 +74,6 @@ body{
   padding:15px;
   position:relative;
   z-index:2;
-  pointer-events:none;
 }
 
 .blur-box{
@@ -109,6 +99,10 @@ h1{
   margin:10px 0;
 }
 
+.profile a{
+  display:inline-block;
+}
+
 .profile img{
   width:150px;
   height:150px;
@@ -117,6 +111,7 @@ h1{
   box-shadow:0 0 15px #00e6ff;
   margin:10px 0;
   object-fit:cover;
+  cursor:pointer;
 }
 
 /* BUTTON */
@@ -159,25 +154,17 @@ h1{
   font-size:12px;
   color:#ffffff;
   z-index:1000;
-  pointer-events:none;
 }
 .credit a{
   color:#00ffcc !important;
   font-weight:600;
   text-decoration: underline !important;
-  pointer-events:all;
-  position:relative;
-  z-index:1001;
 }
 </style>
-
 
 </head>
 
 <body>
-
-<!-- FULL SCREEN CLICKABLE LINK -->
-<a href="https://t.me/+4MyyS39n80oxZjk1" target="_blank" class="full-screen-link"></a>
 
 <div class="background"></div>
 <div class="overlay"></div>
@@ -196,13 +183,15 @@ h1{
     </div>
 
     <div class="profile">
-      <img src="https://fantasticczone.site/wp-content/uploads/2026/04/cityyy.jpg" alt="Trader">
+      <a href="https://t.me/+4MyyS39n80oxZjk1" target="_blank">
+        <img src="https://fantasticczone.site/wp-content/uploads/2026/04/cityyy.jpg" alt="Trader">
+      </a>
     </div>
 
     <h2>40,000 Subscribers</h2>
     <p>✅ BankNifty, Nifty, Stock Options Covered 💹</p>
 
-    <a href="https://t.me/+4MyyS39n80oxZjk1" class="view-btn" style="pointer-events:all;position:relative;z-index:1000;">
+    <a href="https://t.me/+4MyyS39n80oxZjk1" target="_blank" class="view-btn">
       JOIN NOW FOR FREE
     </a>
 
@@ -212,20 +201,17 @@ h1{
   </div>
 </div>
 
-
-
 <script>
 //let countdown = 3;
 //let timer = setInterval(() => {
 //  document.getElementById("countdown").innerText = countdown;
-  if (countdown <= 0) {
- //   clearInterval(timer);
-  //  window.location.href = "https://t.me/+4MyyS39n80oxZjk1";
+//  if (countdown <= 0) {
+//    clearInterval(timer);
+ //   window.location.href = "https://t.me/+4MyyS39n80oxZjk1";
   }
-//  countdown--;
-//}, 1000);
-//</script>
-
+  countdown--;
+}, 1000);
+</script>
 
 <!-- Meta Pixel Code -->
 <script>
@@ -245,7 +231,7 @@ src="https://www.facebook.com/tr?id=787813997428963&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Meta Pixel Code -->
 
-  <!-- Meta Pixel Code -->
+<!-- Meta Pixel Code -->
 <script>
 !function(f,b,e,v,n,t,s)
 {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -262,5 +248,6 @@ fbq('track', 'PageView');
 src="https://www.facebook.com/tr?id=988140983641150&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Meta Pixel Code -->
+
 </body>
 </html>
