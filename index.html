@@ -1,253 +1,205 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Landing page</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Landing page</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
 
-<style>
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:'Poppins',sans-serif;
-}
+    body {
+      background-color: #ffffff;
+      color: #111;
+      text-align: center;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 20px 15px;
+    }
 
-a {
-  text-decoration:none !important;
-  cursor: pointer;
-}
+    h1 {
+      color: #0077ff;
+      font-size: 22px;
+      margin-top: 35px;
+      text-transform: uppercase;
+    }
 
-body{
-  background:black;
-  color:white;
-  text-align:center;
-  height:100vh;
-  overflow:hidden;
-  position:relative;
-}
+    p {
+      font-size: 15px;
+      margin: 8px 0;
+    }
 
-/* BACKGROUND */
-.background{
-  position:fixed;
-  inset:0;
-  background:url('/image/Фон города для Фотошопа - скачать фото бесплатно.jpeg') center/cover no-repeat;
-  filter:blur(1px);
-  z-index:-2;
-}
+    .timer {
+      font-size: 18px;
+      margin-top: 10px;
+      font-weight: bold;
+      color: #ff6600;
+    }
 
-.overlay{
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,.6);
-  z-index:-1;
-}
+    .profile img {
+      width: 160px;
+      border-radius: 50%;
+      margin: 18px 0;
+      border: 3px solid #0077ff;
+      box-shadow: 0 0 15px rgba(0, 119, 255, 0.3);
+    }
 
-/* BUBBLES */
-.bubbles span{
-  position:absolute;
-  bottom:-50px;
-  width:20px;height:20px;
-  background:rgba(255,255,255,.2);
-  border-radius:50%;
-  animation:rise 10s linear infinite;
-}
-.bubbles span:nth-child(2){width:30px;height:30px;left:20%;animation-duration:7s;}
-.bubbles span:nth-child(3){width:40px;height:40px;left:40%;animation-duration:9s;}
-.bubbles span:nth-child(4){width:50px;height:50px;left:60%;animation-duration:6s;}
-.bubbles span:nth-child(5){width:60px;height:60px;left:80%;animation-duration:8s;}
+    .view-btn {
+      display: inline-block;
+      padding: 12px 28px;
+      background: linear-gradient(45deg, #0077ff, #00c6ff);
+      color: #fff;
+      border: none;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      transition: 0.3s;
+      margin-top: 10px;
+    }
 
-@keyframes rise{
-  0%{bottom:-50px;opacity:0}
-  50%{opacity:1}
-  100%{bottom:100%;opacity:0}
-}
+    .view-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 12px rgba(0, 119, 255, 0.4);
+    }
 
-/* CONTENT */
-.container{
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  height:100vh;
-  padding:15px;
-  position:relative;
-  z-index:2;
-}
+    h2 {
+      color: #0077ff;
+      margin-top: 8px;
+      font-size: 18px;
+    }
 
-.blur-box{
-  background:rgba(255,255,255,.15);
-  backdrop-filter:blur(12px);
-  border-radius:15px;
-  padding:25px;
-  width:90%;
-  max-width:400px;
-  box-shadow:0 0 20px rgba(0,230,255,.6);
-}
+    .footer {
+      font-size: 13px;
+      margin-top: 15px;
+      opacity: 0.8;
+    }
 
-h1{
-  color:#00e6ff;
-  font-size:24px;
-  margin-bottom:10px;
-  text-transform:uppercase;
-}
+    .disclaimer {
+      background: #f7f7f7;
+      color: #555;
+      font-size: 12px;
+      text-align: center;
+      padding: 8px 10px 6px 10px;
+      border-top: 1px solid #ddd;
+      margin-top: 15px;
+      line-height: 1.4;
+      border-radius: 8px 8px 0 0;
+    }
 
-.timer{
-  font-size:22px;
-  font-weight:700;
-  margin:10px 0;
-}
+    .footer-links {
+      font-size: 13px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 4px;
+      padding: 5px 0 10px 0;
+      background: #f7f7f7;
+      border-radius: 0 0 8px 8px;
+    }
 
-.profile a{
-  display:inline-block;
-}
+    .footer-links a {
+      color: #0077ff;
+      text-decoration: none;
+      transition: 0.3s;
+      white-space: nowrap;
+    }
 
-.profile img{
-  width:150px;
-  height:150px;
-  border-radius:50%;
-  border:3px solid #00e6ff;
-  box-shadow:0 0 15px #00e6ff;
-  margin:10px 0;
-  object-fit:cover;
-  cursor:pointer;
-}
+    .footer-links span {
+      color: #0077ff;
+      font-weight: 500;
+      margin: 0 2px;
+    }
 
-/* BUTTON */
-@keyframes shine{
-  from{background-position:-200%}
-  to{background-position:200%}
-}
-@keyframes zoom{
-  0%{transform:scale(1)}
-  50%{transform:scale(1.15)}
-  100%{transform:scale(1)}
-}
+    .credit {
+      text-align: center;
+      font-size: 13px;
+      margin-top: 10px;
+      opacity: 0.8;
+      color: #555;
+    }
 
-.view-btn{
-  display:inline-block;
-  height:45px;
-  line-height:45px;
-  padding:0 26px;
-  border-radius:35px;
-  font-size:16px;
-  font-weight:600;
-  background:linear-gradient(45deg,#32B0ED,#3a7bd5);
-  background-size:400% 400%;
-  animation:shine 8s linear infinite,zoom 3s ease-in-out infinite;
-  color:#fff !important;
-  margin-top:10px;
-}
-
-.footer-text{
-  font-size:13px;
-  margin-top:14px;
-  opacity:.85;
-}
-
-.credit{
-  position:absolute;
-  bottom:20px;
-  width:100%;
-  text-align:center;
-  font-size:12px;
-  color:#ffffff;
-  z-index:1000;
-}
-.credit a{
-  color:#00ffcc !important;
-  font-weight:600;
-  text-decoration: underline !important;
-}
-</style>
-
+    .credit a {
+      color: #0077ff;
+      text-decoration: none;
+      font-weight: 600;
+    }
+  </style>
 </head>
 
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1178193404518416');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1178193404518416&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+
 <body>
-
-<div class="background"></div>
-<div class="overlay"></div>
-
-<div class="bubbles">
-  <span></span><span></span><span></span><span></span><span></span>
-</div>
-
-<div class="container">
-  <div class="blur-box">
-    <h1>TRADING GURU SEBI REGISTERED</h1>
-    <p>💰 100% Free Options Trade with Up to 95% Accuracy! 🎯</p>
+  <main>
+    <h1>TRADING GURU SEBI REGISTERED
+</h1>
+    <p>📈 Learn Strategies. Master the Market. 💡</p>
 
     <div class="timer">
-      <span id="countdown">3</span> SECONDS
+      <span id="countdown">5</span> SECONDS
     </div>
 
     <div class="profile">
-      <a href="https://t.me/+4MyyS39n80oxZjk1" target="_blank">
-        <img src="https://fantasticczone.site/wp-content/uploads/2026/04/cityyy.jpg" alt="Trader">
-      </a>
+      <img src="https://fantasticczone.site/wp-content/uploads/2026/04/cityyy.jpg" alt="Trading Logo" />
     </div>
 
-    <h2>40,000 Subscribers</h2>
-    <p>✅ BankNifty, Nifty, Stock Options Covered 💹</p>
+    <h2>90,000 Subscribers</h2>
+    <p>✅ Turning Market Moves into Opportunities</p>
 
-    <a href="https://t.me/+4MyyS39n80oxZjk1" target="_blank" class="view-btn">
-      JOIN NOW FOR FREE
-    </a>
+    <a href="https://t.me/+4MyyS39n80oxZjk1" class="view-btn">JOIN NOW FOR FREE</a>
 
-    <p class="footer-text">
-      💎 Trusted by thousands of traders worldwide 🌍
-    </p>
+    <p class="footer">💎 Precision. Power. Passion 🌍 - Join Now</p>
+  </main>
+
+  <div class="credit">
+      Ads Managed by <a href="https://telegram.me/+TRlJl628l-FkMWE9">@Nexgroww_agency</a>
   </div>
-</div>
 
-<script>
-//let countdown = 3;
-//let timer = setInterval(() => {
-//  document.getElementById("countdown").innerText = countdown;
-//  if (countdown <= 0) {
-//    clearInterval(timer);
- //   window.location.href = "https://t.me/+4MyyS39n80oxZjk1";
-  }
-  countdown--;
-}, 1000);
-</script>
+  <section class="disclaimer">
+    <strong>Disclaimer:</strong> All trading and game-related activities involve risk.
+    Trader Gupta™ provides information for educational and entertainment purposes only.
+    No guaranteed profits. Trade responsibly.
+  </section>
 
-<!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '787813997428963');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=787813997428963&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
+  <div class="footer-links">
+    <a href="https://t.me/+4MyyS39n80oxZjk1">Privacy Policy</a>
+    <span>|</span>
+    <a href="https://t.me/+4MyyS39n80oxZjk1">Contact Us</a>
+  </div>
 
-<!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '988140983641150');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=988140983641150&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
+  <script>
+    let countdown = 5;
+    function updateTimer() {
+      document.getElementById("countdown").innerText = countdown;
+      countdown--;
+    }
+  </script>
 
+  
 </body>
-</html>
+</html>  
